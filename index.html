@@ -3,261 +3,248 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Serviço de Cuidadores Profissionais</title>
-
-  <!-- Bootstrap CSS -->
+  <title>Plataforma de Cuidadores</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f8f9fa;
-    }
-
-    header {
-      background-color: #2c3e50;
-      color: white;
-      padding: 30px 0;
-      text-align: center;
-    }
-
-    header h1 {
-      font-size: 2.5em;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding: 0;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      color: #ff5733;
-    }
-
-    .section-title {
-      color: #2c3e50;
-      margin-top: 30px;
-    }
-
-    .service-card {
-      background-color: #fff;
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .service-card img {
-      width: 100%;
-      border-radius: 10px;
-    }
-
-    footer {
-      background-color: #2c3e50;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
-
-    .social-links a {
-      color: rgb(241, 227, 227);
-      margin: 0 10px;
-      font-size: 1.5em;
-    }
-
-    .social-links a:hover {
-      color: #ff5733;
-    }
-
-    .contact-form button {
-      background-color: #ff5733;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-
-    .contact-form button:hover {
-      background-color: #e04d2d;
-    }
-
-    .carousel-item img {
-      object-fit: cover;
-      height: 500px;
-    }
-
-    .modal .modal-dialog {
-      max-width: 800px;
-    }
+    body { font-family: Arial, sans-serif; background-color: #f8f9fa; }
+    header { background-color: #2c3e50; color: white; padding: 20px; text-align: center; }
+    h1 { margin:0; }
+    .section-title { color: #2c3e50; margin-top: 30px; }
+    .card-custom { background-color: #fff; border-radius: 10px; padding: 15px; margin-bottom: 15px; box-shadow: 0 3px 6px rgba(0,0,0,0.1); }
+    footer { background-color: #2c3e50; color: white; text-align: center; padding: 15px; margin-top: 30px; }
   </style>
 </head>
-
 <body>
 
-  <!-- Cabeçalho -->
-  <header>
-    <h1>Cuidadores Profissionais</h1>
-    <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#servicos">Serviços</a></li>
-        <li><a href="#testemunhos">Depoimentos</a></li>
-        <li><a href="#contato">Contato</a></li>
-        <li><a href="#agendamento">Agendamento</a></li>
-      </ul>
-    </nav>
-  </header>
+<header>
+  <h1>Plataforma de Cuidadores</h1>
+</header>
 
-  <!-- Seção Home -->
-  <section id="home" class="container text-center mt-5">
-    <h2>Bem-vindo à nossa plataforma de cuidadores profissionais</h2>
-    <p>Oferecemos cuidadores qualificados para atender às necessidades de quem você ama. Garantimos a melhor experiência para quem precisa de cuidados personalizados e confiáveis.</p>
-    <button class="btn btn-primary" onclick="window.location.href='#contato'">Entre em Contato</button>
+<div class="container mt-4">
+
+  <!-- Menu -->
+  <nav class="mb-4">
+    <ul class="nav nav-pills justify-content-center">
+      <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+      <li class="nav-item"><a class="nav-link" href="#servicos">Serviços</a></li>
+    </ul>
+  </nav>
+
+  <!-- Home -->
+  <section id="home">
+    <h2 class="section-title">Bem-vindo à Plataforma de Cuidadores</h2>
+    <p>Encontre cuidadores de confiança para idosos, saúde ou crianças. Cadastre-se, agende e entre em contato de forma rápida e segura.</p>
   </section>
 
-  <!-- Seção Sobre -->
-  <section id="sobre" class="container mt-5">
-    <h2 class="section-title">Sobre Nós</h2>
-    <p>Somos uma plataforma dedicada a fornecer cuidadores altamente qualificados para atender às necessidades de saúde e bem-estar de nossos clientes. A nossa missão é oferecer cuidados personalizados para idosos, pacientes com doenças crônicas, e qualquer pessoa que precise de apoio para realizar suas atividades diárias com conforto e dignidade.</p>
+  <!-- Sobre -->
+  <section id="sobre">
+    <h2 class="section-title mt-4">Sobre</h2>
+    <p>Nosso objetivo é conectar cuidadores qualificados a quem precisa de assistência, garantindo segurança, qualidade e praticidade.</p>
   </section>
 
-  <!-- Seção Serviços -->
-  <section id="servicos" class="container mt-5">
-    <h2 class="section-title">Nossos Serviços</h2>
-    <div class="row">
-      <div class="col-md-4">
-        <div class="service-card">
-          <img src="https://via.placeholder.com/300x200" alt="Cuidador de Idosos">
-          <h3>Cuidador de Idosos</h3>
-          <p>Cuidamos do seu familiar com carinho e respeito, oferecendo conforto e atenção em todos os momentos.</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="service-card">
-          <img src="https://via.placeholder.com/300x200" alt="Cuidador de Saúde">
-          <h3>Cuidador de Saúde</h3>
-          <p>Profissionais qualificados para atender pacientes com doenças crônicas, recuperação pós-cirúrgica ou outras necessidades especiais.</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="service-card">
-          <img src="https://via.placeholder.com/300x200" alt="Cuidador Infantil">
-          <h3>Cuidador Infantil</h3>
-          <p>Cuidadores especializados para crianças, proporcionando um ambiente seguro e educativo.</p>
-        </div>
-      </div>
+  <!-- Serviços -->
+  <section id="servicos">
+    <h2 class="section-title mt-4">Serviços</h2>
+    <ul>
+      <li>Cuidador de Idosos</li>
+      <li>Cuidador de Saúde</li>
+      <li>Cuidador Infantil</li>
+    </ul>
+  </section>
+
+  <!-- Cadastro de Cuidadores -->
+  <h2 class="section-title mt-4">Cadastrar Cuidador</h2>
+  <form id="formCadastroCuidador">
+    <div class="mb-3">
+      <label for="nomeCuidador" class="form-label">Nome</label>
+      <input type="text" class="form-control" id="nomeCuidador" required>
     </div>
-  </section>
-
-  <!-- Seção Depoimentos -->
-  <section id="testemunhos" class="container mt-5">
-    <h2 class="section-title">Depoimentos</h2>
-    <div id="carouselTestemunhos" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <p>"A equipe de cuidadores foi maravilhosa. Meu pai se sentiu muito bem tratado e cuidado. Super recomendo!" - Maria T.</p>
-        </div>
-        <div class="carousel-item">
-          <p>"O cuidado e a atenção que minha mãe recebeu foram excepcionais. Não poderia estar mais feliz com o serviço." - João P.</p>
-        </div>
-        <div class="carousel-item">
-          <p>"Os cuidadores são altamente capacitados e cuidadosos. Fiquei tranquilo sabendo que minha avó estava em boas mãos." - Carla M.</p>
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselTestemunhos" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Anterior</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselTestemunhos" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Próximo</span>
-      </button>
+    <div class="mb-3">
+      <label for="emailCuidador" class="form-label">Email</label>
+      <input type="email" class="form-control" id="emailCuidador" required>
     </div>
-  </section>
-
-  <!-- Seção Contato -->
-  <section id="contato" class="container mt-5">
-    <h2 class="section-title">Entre em Contato</h2>
-    <form class="contact-form">
-      <div class="mb-3">
-        <label for="nome" class="form-label">Nome</label>
-        <input type="text" class="form-control" id="nome" required>
-      </div>
-      <div class="mb-3">
-        <label for="email" class="form-label">Email</label>
-        <input type="email" class="form-control" id="email" required>
-      </div>
-      <div class="mb-3">
-        <label for="mensagem" class="form-label">Mensagem</label>
-        <textarea class="form-control" id="mensagem" rows="4" required></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary">Enviar</button>
-    </form>
-  </section>
-
-  <!-- Seção Agendamento -->
-  <section id="agendamento" class="container mt-5">
-    <h2 class="section-title">Agende seu Cuidador</h2>
-    <form id="agendamentoForm">
-      <div class="mb-3">
-        <label for="data" class="form-label">Data do Agendamento</label>
-        <input type="date" class="form-control" id="data" required>
-      </div>
-      <div class="mb-3">
-        <label for="tipoServico" class="form-label">Tipo de Serviço</label>
-        <select class="form-control" id="tipoServico" required>
-          <option value="idoso">Cuidador de Idosos</option>
-          <option value="saude">Cuidador de Saúde</option>
-          <option value="infantil">Cuidador Infantil</option>
-        </select>
-      </div>
-      <button type="submit" class="btn btn-primary">Agendar</button>
-    </form>
-  </section>
-
-  <!-- Rodapé -->
-  <footer>
-    <p>&copy; 2025 Cuidadores Profissionais. Todos os direitos reservados.</p>
-    <div class="social-links">
-      <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-      <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+    <div class="mb-3">
+      <label for="tipoServicoCuidador" class="form-label">Tipo de Serviço</label>
+      <select class="form-select" id="tipoServicoCuidador" required>
+        <option value="idoso">Cuidador de Idosos</option>
+        <option value="saude">Cuidador de Saúde</option>
+        <option value="infantil">Cuidador Infantil</option>
+      </select>
     </div>
-  </footer>
+    <button type="submit" class="btn btn-primary">Cadastrar</button>
+  </form>
 
-  <!-- Scripts do Bootstrap -->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+  <h3 class="mt-4">Cuidadores Cadastrados</h3>
+  <div class="mb-3">
+    <label for="filtroTipo" class="form-label">Filtrar por tipo:</label>
+    <select id="filtroTipo" class="form-select">
+      <option value="todos">Todos</option>
+      <option value="idoso">Idosos</option>
+      <option value="saude">Saúde</option>
+      <option value="infantil">Infantil</option>
+    </select>
+  </div>
+  <ul id="listaCuidadores" class="list-group mb-5"></ul>
 
-  <script>
-    // Função de validação e envio do formulário de contato
-    document.querySelector(".contact-form").addEventListener("submit", function(event) {
-      event.preventDefault();
-      alert("Mensagem enviada com sucesso!");
-      document.querySelector(".contact-form").reset();
+  <!-- Pacientes -->
+  <h2 class="section-title">Pacientes</h2>
+  <div id="listaPacientes"></div>
+
+  <!-- Agendamento -->
+  <h2 class="section-title mt-4">Agendar Cuidador</h2>
+  <form id="formAgendamento">
+    <div class="mb-3">
+      <label for="selectCuidador" class="form-label">Escolha o Cuidador</label>
+      <select id="selectCuidador" class="form-select" required></select>
+    </div>
+    <div class="mb-3">
+      <label for="selectPaciente" class="form-label">Escolha o Paciente</label>
+      <select id="selectPaciente" class="form-select" required></select>
+    </div>
+    <div class="mb-3">
+      <label for="dataAgendamento" class="form-label">Data</label>
+      <input type="date" class="form-control" id="dataAgendamento" required>
+    </div>
+    <div class="mb-3">
+      <label for="horaAgendamento" class="form-label">Hora</label>
+      <input type="time" class="form-control" id="horaAgendamento" required>
+    </div>
+    <button type="submit" class="btn btn-success">Agendar</button>
+  </form>
+
+  <h3 class="mt-4">Agendamentos</h3>
+  <div id="listaAgendamentos"></div>
+
+  <!-- Contato -->
+  <h2 class="section-title mt-5">Contato</h2>
+  <form id="formContato">
+    <div class="mb-3">
+      <label for="nomeContato" class="form-label">Nome</label>
+      <input type="text" class="form-control" id="nomeContato" required>
+    </div>
+    <div class="mb-3">
+      <label for="emailContato" class="form-label">Email</label>
+      <input type="email" class="form-control" id="emailContato" required>
+    </div>
+    <div class="mb-3">
+      <label for="mensagemContato" class="form-label">Mensagem</label>
+      <textarea class="form-control" id="mensagemContato" rows="4" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Enviar</button>
+  </form>
+
+</div>
+
+<footer>
+  <p>&copy; 2025 Plataforma de Cuidadores</p>
+</footer>
+
+<script>
+  // Pacientes
+  const pacientes = [
+    {nome:"Lucas", idade:4},
+    {nome:"Ana", idade:30},
+    {nome:"Sr. José", idade:75},
+    {nome:"Pedro", idade:50},
+    {nome:"Helena", idade:68}
+  ];
+
+  function carregarPacientes() {
+    const div = document.getElementById('listaPacientes');
+    const selectPaciente = document.getElementById('selectPaciente');
+    div.innerHTML = '';
+    selectPaciente.innerHTML = '';
+    pacientes.forEach((p, i) => {
+      div.innerHTML += `<div class="card-custom"><strong>${p.nome}</strong> - ${p.idade} anos</div>`;
+      selectPaciente.innerHTML += `<option value="${i}">${p.nome}</option>`;
     });
+  }
 
-    // Função de agendamento
-    document.getElementById("agendamentoForm").addEventListener("submit", function(event) {
-      event.preventDefault();
-      const data = document.getElementById("data").value;
-      const tipoServico = document.getElementById("tipoServico").value;
-      alert(`Agendamento confirmado para ${data} com o serviço de ${tipoServico}`);
-      document.getElementById("agendamentoForm").reset();
+  function carregarCuidadores() {
+    const lista = document.getElementById('listaCuidadores');
+    const selectCuidador = document.getElementById('selectCuidador');
+    const filtro = document.getElementById('filtroTipo').value;
+    lista.innerHTML = '';
+    selectCuidador.innerHTML = '';
+    const cuidadores = JSON.parse(localStorage.getItem('cuidadores')) || [];
+    cuidadores.filter(c => filtro==='todos' || c.tipoServico===filtro).forEach((c, i) => {
+      lista.innerHTML += `<li class="list-group-item">${c.nome} - ${c.email} - ${c.tipoServico}</li>`;
+      selectCuidador.innerHTML += `<option value="${i}">${c.nome} (${c.tipoServico})</option>`;
     });
-  </script>
+  }
+
+  document.getElementById('filtroTipo').addEventListener('change', carregarCuidadores);
+
+  document.getElementById('formCadastroCuidador').addEventListener('submit', function(e){
+    e.preventDefault();
+    const nome = document.getElementById('nomeCuidador').value.trim();
+    const email = document.getElementById('emailCuidador').value.trim();
+    const tipoServico = document.getElementById('tipoServicoCuidador').value;
+    if(!nome || !email) return alert('Preencha todos os campos!');
+    const cuidadores = JSON.parse(localStorage.getItem('cuidadores')) || [];
+    cuidadores.push({nome,email,tipoServico});
+    localStorage.setItem('cuidadores', JSON.stringify(cuidadores));
+    this.reset();
+    carregarCuidadores();
+  });
+
+  function carregarAgendamentos() {
+    const div = document.getElementById('listaAgendamentos');
+    div.innerHTML = '';
+    const agendamentos = JSON.parse(localStorage.getItem('agendamentos')) || [];
+    agendamentos.forEach(a => {
+      div.innerHTML += `<div class="card-custom">Cuidador: ${a.cuidador} → Paciente: ${a.paciente}<br>Data: ${a.data} | Hora: ${a.hora}</div>`;
+    });
+  }
+
+  document.getElementById('formAgendamento').addEventListener('submit', function(e){
+    e.preventDefault();
+    const cuidadores = JSON.parse(localStorage.getItem('cuidadores')) || [];
+    const agendamentos = JSON.parse(localStorage.getItem('agendamentos')) || [];
+    const cuidador = cuidadores[document.getElementById('selectCuidador').value].nome;
+    const paciente = pacientes[document.getElementById('selectPaciente').value].nome;
+    const data = document.getElementById('dataAgendamento').value;
+    const hora = document.getElementById('horaAgendamento').value;
+
+    if(agendamentos.some(a => a.cuidador === cuidador && a.data===data && a.hora===hora)) {
+      return alert('Este cuidador já está agendado neste horário!');
+    }
+
+    agendamentos.push({cuidador,paciente,data,hora});
+    localStorage.setItem('agendamentos', JSON.stringify(agendamentos));
+    this.reset();
+    carregarAgendamentos();
+  });
+
+  document.getElementById('formContato').addEventListener('submit', function(e){
+    e.preventDefault();
+    alert('Mensagem enviada com sucesso!');
+    this.reset();
+  });
+
+  // Bloquear datas passadas e finais de semana
+  const dataInput = document.getElementById('dataAgendamento');
+  const hoje = new Date();
+  const ano = hoje.getFullYear();
+  const mes = String(hoje.getMonth() + 1).padStart(2,'0');
+  const dia = String(hoje.getDate()).padStart(2,'0');
+  dataInput.min = `${ano}-${mes}-${dia}`;
+
+  dataInput.addEventListener('input', function() {
+    const dataSelecionada = new Date(this.value);
+    const diaSemana = dataSelecionada.getDay();
+    if(diaSemana === 0 || diaSemana === 6) {
+      alert('Finais de semana não são permitidos. Escolha um dia útil.');
+      this.value = '';
+    }
+  });
+
+  // Inicialização
+  carregarPacientes();
+  carregarCuidadores();
+  carregarAgendamentos();
+</script>
 
 </body>
 </html>
-
