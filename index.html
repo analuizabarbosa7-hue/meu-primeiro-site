@@ -1,250 +1,252 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Plataforma de Cuidadores</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    body { font-family: Arial, sans-serif; background-color: #f8f9fa; }
-    header { background-color: #2c3e50; color: white; padding: 20px; text-align: center; }
-    h1 { margin:0; }
-    .section-title { color: #2c3e50; margin-top: 30px; }
-    .card-custom { background-color: #fff; border-radius: 10px; padding: 15px; margin-bottom: 15px; box-shadow: 0 3px 6px rgba(0,0,0,0.1); }
-    footer { background-color: #2c3e50; color: white; text-align: center; padding: 15px; margin-top: 30px; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vitaly Saúde & Cuidado</title>
+
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Fonte e cores */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background-color: #007B8F;
+            padding: 1rem;
+            color: white;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+        }
+
+        .menu {
+            list-style-type: none;
+        }
+
+        .menu li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Home Section */
+        #home {
+            background-color: #004C52;
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .cta-btn {
+            background-color: #FFB400;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        /* Seções */
+        .section {
+            padding: 2rem 5%;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .servicos, .equipes {
+            display: flex;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        .servico-item, .equipe-item {
+            flex: 1;
+            background-color: white;
+            padding: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Formulário de Agendamento */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        input, select, button {
+            padding: 10px;
+            font-size: 1rem;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background-color: #007B8F;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #005a5a;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #007B8F;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
 </head>
 <body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Vitaly Saúde & Cuidado</h1>
+            </div>
+            <ul class="menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#equipes">Equipes</a></li>
+                <li><a href="#agendamento">Agendamento</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<header>
-  <h1>Plataforma de Cuidadores</h1>
-</header>
+    <!-- Home Section -->
+    <section id="home" class="section">
+        <div class="home-content">
+            <h2>Bem-vindo à Vitaly Saúde & Cuidado</h2>
+            <p>Cuidados profissionais para a sua saúde e bem-estar.</p>
+            <a href="#agendamento" class="cta-btn">Agende uma consulta</a>
+        </div>
+    </section>
 
-<div class="container mt-4">
+    <!-- Serviços Section -->
+    <section id="servicos" class="section">
+        <h2>Serviços Oferecidos</h2>
+        <div class="servicos">
+            <div class="servico-item">
+                <h3>Cuidados Geriátricos</h3>
+                <p>Apoio diário, cuidados com a mobilidade e mais.</p>
+            </div>
+            <div class="servico-item">
+                <h3>Cuidados Pós-Cirúrgicos</h3>
+                <p>Assistência especializada para recuperação pós-cirúrgica.</p>
+            </div>
+            <div class="servico-item">
+                <h3>Cuidados Paliativos</h3>
+                <p>Apoio para condições terminais com conforto e dignidade.</p>
+            </div>
+        </div>
+    </section>
 
-  <!-- Menu -->
-  <nav class="mb-4">
-    <ul class="nav nav-pills justify-content-center">
-      <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
-      <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
-      <li class="nav-item"><a class="nav-link" href="#servicos">Serviços</a></li>
-    </ul>
-  </nav>
+    <!-- Equipes Section -->
+    <section id="equipes" class="section">
+        <h2>Conheça Nossas Equipes</h2>
+        <div class="equipes">
+            <div class="equipe-item">
+                <h3>Equipe Geriátrica</h3>
+                <p>Profissionais especializados em cuidados com idosos.</p>
+            </div>
+            <div class="equipe-item">
+                <h3>Equipe Pós-Cirúrgica</h3>
+                <p>Cuidadores treinados para auxiliar na recuperação após cirurgia.</p>
+            </div>
+            <div class="equipe-item">
+                <h3>Equipe Paliativa</h3>
+                <p>Equipe especializada no cuidado de pacientes em estado terminal.</p>
+            </div>
+        </div>
+    </section>
 
-  <!-- Home -->
-  <section id="home">
-    <h2 class="section-title">Bem-vindo à Plataforma de Cuidadores</h2>
-    <p>Encontre cuidadores de confiança para idosos, saúde ou crianças. Cadastre-se, agende e entre em contato de forma rápida e segura.</p>
-  </section>
+    <!-- Agendamento Section -->
+    <section id="agendamento" class="section">
+        <h2>Agende Sua Consulta</h2>
+        <form id="agendamento-form">
+            <label for="tipo-servico">Escolha o serviço:</label>
+            <select id="tipo-servico" name="tipo-servico">
+                <option value="geriatrico">Cuidados Geriátricos</option>
+                <option value="pos-cirurgico">Cuidados Pós-Cirúrgicos</option>
+                <option value="paliativo">Cuidados Paliativos</option>
+            </select>
 
-  <!-- Sobre -->
-  <section id="sobre">
-    <h2 class="section-title mt-4">Sobre</h2>
-    <p>Nosso objetivo é conectar cuidadores qualificados a quem precisa de assistência, garantindo segurança, qualidade e praticidade.</p>
-  </section>
+            <label for="data">Data de Atendimento:</label>
+            <input type="date" id="data" name="data" required>
 
-  <!-- Serviços -->
-  <section id="servicos">
-    <h2 class="section-title mt-4">Serviços</h2>
-    <ul>
-      <li>Cuidador de Idosos</li>
-      <li>Cuidador de Saúde</li>
-      <li>Cuidador Infantil</li>
-    </ul>
-  </section>
+            <label for="hora">Hora de Atendimento:</label>
+            <input type="time" id="hora" name="hora" required>
 
-  <!-- Cadastro de Cuidadores -->
-  <h2 class="section-title mt-4">Cadastrar Cuidador</h2>
-  <form id="formCadastroCuidador">
-    <div class="mb-3">
-      <label for="nomeCuidador" class="form-label">Nome</label>
-      <input type="text" class="form-control" id="nomeCuidador" required>
-    </div>
-    <div class="mb-3">
-      <label for="emailCuidador" class="form-label">Email</label>
-      <input type="email" class="form-control" id="emailCuidador" required>
-    </div>
-    <div class="mb-3">
-      <label for="tipoServicoCuidador" class="form-label">Tipo de Serviço</label>
-      <select class="form-select" id="tipoServicoCuidador" required>
-        <option value="idoso">Cuidador de Idosos</option>
-        <option value="saude">Cuidador de Saúde</option>
-        <option value="infantil">Cuidador Infantil</option>
-      </select>
-    </div>
-    <button type="submit" class="btn btn-primary">Cadastrar</button>
-  </form>
+            <label for="nome">Seu Nome:</label>
+            <input type="text" id="nome" name="nome" required>
 
-  <h3 class="mt-4">Cuidadores Cadastrados</h3>
-  <div class="mb-3">
-    <label for="filtroTipo" class="form-label">Filtrar por tipo:</label>
-    <select id="filtroTipo" class="form-select">
-      <option value="todos">Todos</option>
-      <option value="idoso">Idosos</option>
-      <option value="saude">Saúde</option>
-      <option value="infantil">Infantil</option>
-    </select>
-  </div>
-  <ul id="listaCuidadores" class="list-group mb-5"></ul>
+            <label for="email">Seu E-mail:</label>
+            <input type="email" id="email" name="email" required>
 
-  <!-- Pacientes -->
-  <h2 class="section-title">Pacientes</h2>
-  <div id="listaPacientes"></div>
+            <button type="submit" class="cta-btn">Agendar</button>
+        </form>
+    </section>
 
-  <!-- Agendamento -->
-  <h2 class="section-title mt-4">Agendar Cuidador</h2>
-  <form id="formAgendamento">
-    <div class="mb-3">
-      <label for="selectCuidador" class="form-label">Escolha o Cuidador</label>
-      <select id="selectCuidador" class="form-select" required></select>
-    </div>
-    <div class="mb-3">
-      <label for="selectPaciente" class="form-label">Escolha o Paciente</label>
-      <select id="selectPaciente" class="form-select" required></select>
-    </div>
-    <div class="mb-3">
-      <label for="dataAgendamento" class="form-label">Data</label>
-      <input type="date" class="form-control" id="dataAgendamento" required>
-    </div>
-    <div class="mb-3">
-      <label for="horaAgendamento" class="form-label">Hora</label>
-      <input type="time" class="form-control" id="horaAgendamento" required>
-    </div>
-    <button type="submit" class="btn btn-success">Agendar</button>
-  </form>
+    <!-- Contato Section -->
+    <section id="contato" class="section">
+        <h2>Contato</h2>
+        <p>Fale conosco através do nosso WhatsApp ou envie um e-mail.</p>
+        <p>WhatsApp: <a href="https://wa.me/123456789" target="_blank">Clique aqui</a></p>
+        <p>E-mail: <a href="mailto:contato@vitaly.com.br">contato@vitaly.com.br</a></p>
+    </section>
 
-  <h3 class="mt-4">Agendamentos</h3>
-  <div id="listaAgendamentos"></div>
+    <footer>
+        <p>&copy; 2025 Vitaly Saúde & Cuidado - Todos os direitos reservados.</p>
+    </footer>
 
-  <!-- Contato -->
-  <h2 class="section-title mt-5">Contato</h2>
-  <form id="formContato">
-    <div class="mb-3">
-      <label for="nomeContato" class="form-label">Nome</label>
-      <input type="text" class="form-control" id="nomeContato" required>
-    </div>
-    <div class="mb-3">
-      <label for="emailContato" class="form-label">Email</label>
-      <input type="email" class="form-control" id="emailContato" required>
-    </div>
-    <div class="mb-3">
-      <label for="mensagemContato" class="form-label">Mensagem</label>
-      <textarea class="form-control" id="mensagemContato" rows="4" required></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary">Enviar</button>
-  </form>
+    <script>
+        // Lógica para o envio do formulário de agendamento
+        document.getElementById('agendamento-form').addEventListener('submit', function(e) {
+            e.preventDefault();
 
-</div>
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const tipoServico = document.getElementById('tipo-servico').value;
+            const data = document.getElementById('data').value;
+            const hora = document.getElementById('hora').value;
 
-<footer>
-  <p>&copy; 2025 Plataforma de Cuidadores</p>
-</footer>
+            alert(`Agendamento realizado com sucesso!\n\nNome: ${nome}\nServiço: ${tipoServico}\nData: ${data}\nHora: ${hora}`);
 
-<script>
-  // Pacientes
-  const pacientes = [
-    {nome:"Lucas", idade:4},
-    {nome:"Ana", idade:30},
-    {nome:"Sr. José", idade:75},
-    {nome:"Pedro", idade:50},
-    {nome:"Helena", idade:68}
-  ];
-
-  function carregarPacientes() {
-    const div = document.getElementById('listaPacientes');
-    const selectPaciente = document.getElementById('selectPaciente');
-    div.innerHTML = '';
-    selectPaciente.innerHTML = '';
-    pacientes.forEach((p, i) => {
-      div.innerHTML += `<div class="card-custom"><strong>${p.nome}</strong> - ${p.idade} anos</div>`;
-      selectPaciente.innerHTML += `<option value="${i}">${p.nome}</option>`;
-    });
-  }
-
-  function carregarCuidadores() {
-    const lista = document.getElementById('listaCuidadores');
-    const selectCuidador = document.getElementById('selectCuidador');
-    const filtro = document.getElementById('filtroTipo').value;
-    lista.innerHTML = '';
-    selectCuidador.innerHTML = '';
-    const cuidadores = JSON.parse(localStorage.getItem('cuidadores')) || [];
-    cuidadores.filter(c => filtro==='todos' || c.tipoServico===filtro).forEach((c, i) => {
-      lista.innerHTML += `<li class="list-group-item">${c.nome} - ${c.email} - ${c.tipoServico}</li>`;
-      selectCuidador.innerHTML += `<option value="${i}">${c.nome} (${c.tipoServico})</option>`;
-    });
-  }
-
-  document.getElementById('filtroTipo').addEventListener('change', carregarCuidadores);
-
-  document.getElementById('formCadastroCuidador').addEventListener('submit', function(e){
-    e.preventDefault();
-    const nome = document.getElementById('nomeCuidador').value.trim();
-    const email = document.getElementById('emailCuidador').value.trim();
-    const tipoServico = document.getElementById('tipoServicoCuidador').value;
-    if(!nome || !email) return alert('Preencha todos os campos!');
-    const cuidadores = JSON.parse(localStorage.getItem('cuidadores')) || [];
-    cuidadores.push({nome,email,tipoServico});
-    localStorage.setItem('cuidadores', JSON.stringify(cuidadores));
-    this.reset();
-    carregarCuidadores();
-  });
-
-  function carregarAgendamentos() {
-    const div = document.getElementById('listaAgendamentos');
-    div.innerHTML = '';
-    const agendamentos = JSON.parse(localStorage.getItem('agendamentos')) || [];
-    agendamentos.forEach(a => {
-      div.innerHTML += `<div class="card-custom">Cuidador: ${a.cuidador} → Paciente: ${a.paciente}<br>Data: ${a.data} | Hora: ${a.hora}</div>`;
-    });
-  }
-
-  document.getElementById('formAgendamento').addEventListener('submit', function(e){
-    e.preventDefault();
-    const cuidadores = JSON.parse(localStorage.getItem('cuidadores')) || [];
-    const agendamentos = JSON.parse(localStorage.getItem('agendamentos')) || [];
-    const cuidador = cuidadores[document.getElementById('selectCuidador').value].nome;
-    const paciente = pacientes[document.getElementById('selectPaciente').value].nome;
-    const data = document.getElementById('dataAgendamento').value;
-    const hora = document.getElementById('horaAgendamento').value;
-
-    if(agendamentos.some(a => a.cuidador === cuidador && a.data===data && a.hora===hora)) {
-      return alert('Este cuidador já está agendado neste horário!');
-    }
-
-    agendamentos.push({cuidador,paciente,data,hora});
-    localStorage.setItem('agendamentos', JSON.stringify(agendamentos));
-    this.reset();
-    carregarAgendamentos();
-  });
-
-  document.getElementById('formContato').addEventListener('submit', function(e){
-    e.preventDefault();
-    alert('Mensagem enviada com sucesso!');
-    this.reset();
-  });
-
-  // Bloquear datas passadas e finais de semana
-  const dataInput = document.getElementById('dataAgendamento');
-  const hoje = new Date();
-  const ano = hoje.getFullYear();
-  const mes = String(hoje.getMonth() + 1).padStart(2,'0');
-  const dia = String(hoje.getDate()).padStart(2,'0');
-  dataInput.min = `${ano}-${mes}-${dia}`;
-
-  dataInput.addEventListener('input', function() {
-    const dataSelecionada = new Date(this.value);
-    const diaSemana = dataSelecionada.getDay();
-    if(diaSemana === 0 || diaSemana === 6) {
-      alert('Finais de semana não são permitidos. Escolha um dia útil.');
-      this.value = '';
-    }
-  });
-
-  // Inicialização
-  carregarPacientes();
-  carregarCuidadores();
-  carregarAgendamentos();
-</script>
-
+            // Aqui você pode enviar os dados para um servidor ou API de agendamento
+        });
+    </script>
 </body>
 </html>
