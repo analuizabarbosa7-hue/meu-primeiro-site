@@ -5,248 +5,481 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vitaly Saúde & Cuidado</title>
 
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <style>
-        /* Reset básico */
-        * {
+        :root {
+            --bg: #f8f5f1;
+            --card: #ffffff;
+            --text: #333;
+            --primary: #77b6a5;
+            --secondary: #ffcdb2;
+            --accent: #b5838d;
+            --dark-bg: #1f1f1f;
+            --dark-card: #2e2e2e;
+            --dark-text: #e7e7e7;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: "Poppins", sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            transition: 0.3s;
         }
 
-        /* Fonte e cores */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-
-        /* Header */
+        /* HEADER */
         header {
-            background-color: #007B8F;
-            padding: 1rem;
-            color: white;
-        }
-
-        nav {
+            background: var(--primary);
+            padding: 1rem 6%;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            color: #fff;
         }
 
-        .logo h1 {
+        header .logo {
             font-size: 1.8rem;
+            font-weight: 600;
         }
 
-        .menu {
-            list-style-type: none;
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
         }
 
-        .menu li {
-            display: inline;
-            margin: 0 15px;
-        }
-
-        .menu a {
+        nav ul li a {
+            color: white;
             text-decoration: none;
-            color: white;
-            font-weight: bold;
+            font-weight: 500;
         }
 
-        /* Home Section */
-        #home {
-            background-color: #004C52;
-            color: white;
-            text-align: center;
-            padding: 3rem 0;
+        nav ul li a:hover {
+            color: var(--secondary);
         }
 
-        .cta-btn {
-            background-color: #FFB400;
-            padding: 10px 20px;
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-            border-radius: 5px;
-        }
-
-        /* Seções */
-        .section {
-            padding: 2rem 5%;
-        }
-
-        h2 {
+        /* MENU MOBILE */
+        #menu-btn {
+            display: none;
             font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .servicos, .equipes {
-            display: flex;
-            gap: 20px;
-            justify-content: space-between;
-        }
-
-        .servico-item, .equipe-item {
-            flex: 1;
-            background-color: white;
-            padding: 1rem;
-            border-radius: 5px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Formulário de Agendamento */
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        input, select, button {
-            padding: 10px;
-            font-size: 1rem;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
-
-        button {
-            background-color: #007B8F;
-            color: white;
             cursor: pointer;
         }
 
-        button:hover {
-            background-color: #005a5a;
+        @media(max-width: 850px){
+            nav ul {
+                position: fixed;
+                right: -100%;
+                top: 0;
+                background: var(--primary);
+                height: 100vh;
+                flex-direction: column;
+                padding-top: 6rem;
+                transition: 0.3s;
+                width: 60%;
+            }
+
+            nav ul.open {
+                right: 0;
+            }
+
+            #menu-btn {
+                display: block;
+            }
         }
 
-        /* Footer */
-        footer {
-            background-color: #007B8F;
-            color: white;
+        /* HOME */
+        #home {
+            background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)),
+            url("https://images.unsplash.com/photo-1606813902913-5817298b4058?w=1600")
+            center/cover no-repeat;
+            padding: 8rem 6%;
             text-align: center;
-            padding: 1rem;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
         }
+
+        #home h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        #home p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            background: var(--accent);
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #9d6a75;
+        }
+
+        /* SECTIONS BASE */
+        section {
+            padding: 4rem 6%;
+        }
+
+        h2 {
+            font-size: 2.4rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .grid {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .card {
+            width: 340px;
+            background: var(--card);
+            padding: 1rem;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        /* GALERIA */
+        .galeria img {
+            height: 200px;
+            border-radius: 10px;
+        }
+
+        /* FAQ */
+        .faq {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .faq-item {
+            background: var(--card);
+            margin-bottom: 1rem;
+            padding: 1rem;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        /* PLANOS */
+        .plano {
+            width: 300px;
+            background: var(--secondary);
+            padding: 2rem;
+            border-radius: 14px;
+            text-align: center;
+        }
+
+        .preco {
+            font-size: 2rem;
+            margin: 1rem 0;
+        }
+
+        /* BLOG */
+        .post img {
+            height: 200px;
+        }
+
+        /* FORMULÁRIO */
+        form {
+            max-width: 580px;
+            margin: auto;
+            background: var(--card);
+            padding: 2rem;
+            border-radius: 14px;
+        }
+
+        label {
+            font-weight: 600;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 8px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border: 1px solid #aaa;
+        }
+
+        /* MAPA */
+        iframe {
+            width: 100%;
+            height: 350px;
+            border-radius: 12px;
+            margin-top: 2rem;
+        }
+
+        /* CHATBOT */
+        #chatbot {
+            position: fixed;
+            bottom: 100px;
+            right: 20px;
+            background: var(--accent);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        #chat-window {
+            display: none;
+            position: fixed;
+            bottom: 150px;
+            right: 20px;
+            width: 300px;
+            background: var(--card);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+            padding: 1rem;
+            border-radius: 12px;
+        }
+
+        /* DARK MODE */
+        .dark {
+            background: var(--dark-bg);
+            color: var(--dark-text);
+        }
+
+        .dark header,
+        .dark nav ul,
+        .dark .card,
+        .dark form,
+        .dark .faq-item {
+            background: var(--dark-card) !important;
+        }
+
+        #theme-toggle {
+            background: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
     </style>
 </head>
+
 <body>
-    <!-- Header -->
+
+    <!-- HEADER -->
     <header>
+        <div class="logo">Vitaly Saúde</div>
+
+        <i id="menu-btn" class="fas fa-bars"></i>
+
         <nav>
-            <div class="logo">
-                <h1>Vitaly Saúde & Cuidado</h1>
-            </div>
-            <ul class="menu">
-                <li><a href="#home">Home</a></li>
+            <ul id="menu">
+                <li><a href="#home">Início</a></li>
                 <li><a href="#servicos">Serviços</a></li>
                 <li><a href="#equipes">Equipes</a></li>
+                <li><a href="#planos">Planos</a></li>
+                <li><a href="#galeria">Galeria</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#blog">Blog</a></li>
                 <li><a href="#agendamento">Agendamento</a></li>
                 <li><a href="#contato">Contato</a></li>
+                <button id="theme-toggle">Tema</button>
             </ul>
         </nav>
     </header>
 
-    <!-- Home Section -->
-    <section id="home" class="section">
-        <div class="home-content">
-            <h2>Bem-vindo à Vitaly Saúde & Cuidado</h2>
-            <p>Cuidados profissionais para a sua saúde e bem-estar.</p>
-            <a href="#agendamento" class="cta-btn">Agende uma consulta</a>
-        </div>
+    <!-- HOME -->
+    <section id="home">
+        <h1>Cuidado que Acolhe, Saúde que Transforma</h1>
+        <p>Atendimento especializado e humanizado para você e sua família.</p>
+        <a class="btn" href="#agendamento">Agendar Agora</a>
     </section>
 
-    <!-- Serviços Section -->
-    <section id="servicos" class="section">
-        <h2>Serviços Oferecidos</h2>
-        <div class="servicos">
-            <div class="servico-item">
+    <!-- SERVIÇOS -->
+    <section id="servicos">
+        <h2>Nossos Serviços</h2>
+
+        <div class="grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1580281658629-03753d8e2311?w=900">
                 <h3>Cuidados Geriátricos</h3>
-                <p>Apoio diário, cuidados com a mobilidade e mais.</p>
+                <p>Assistência completa para idosos, com carinho e responsabilidade.</p>
             </div>
-            <div class="servico-item">
+
+            <div class="card">
+                <img src="">
                 <h3>Cuidados Pós-Cirúrgicos</h3>
-                <p>Assistência especializada para recuperação pós-cirúrgica.</p>
+                <p>Equipe treinada para acompanhamento na recuperação.</p>
             </div>
-            <div class="servico-item">
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1547480053-8f0b9eef8f87?w=900">
                 <h3>Cuidados Paliativos</h3>
-                <p>Apoio para condições terminais com conforto e dignidade.</p>
+                <p>Conforto, dignidade e acolhimento em cada momento.</p>
             </div>
         </div>
     </section>
 
-    <!-- Equipes Section -->
-    <section id="equipes" class="section">
-        <h2>Conheça Nossas Equipes</h2>
-        <div class="equipes">
-            <div class="equipe-item">
+    <!-- EQUIPES -->
+    <section id="equipes">
+        <h2>Nossas Equipes</h2>
+
+        <div class="grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1584467735871-8f9e55cc2b3f?w=900">
                 <h3>Equipe Geriátrica</h3>
-                <p>Profissionais especializados em cuidados com idosos.</p>
+                <p>Cuidadores experientes e preparados para atenção total.</p>
             </div>
-            <div class="equipe-item">
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1550831107-1553da8c8464?w=900">
                 <h3>Equipe Pós-Cirúrgica</h3>
-                <p>Cuidadores treinados para auxiliar na recuperação após cirurgia.</p>
+                <p>Profissionais altamente capacitados para recuperação.</p>
             </div>
-            <div class="equipe-item">
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?w=900">
                 <h3>Equipe Paliativa</h3>
-                <p>Equipe especializada no cuidado de pacientes em estado terminal.</p>
+                <p>Humanização e empatia para quem mais precisa.</p>
             </div>
         </div>
     </section>
 
-    <!-- Agendamento Section -->
-    <section id="agendamento" class="section">
-        <h2>Agende Sua Consulta</h2>
-        <form id="agendamento-form">
-            <label for="tipo-servico">Escolha o serviço:</label>
-            <select id="tipo-servico" name="tipo-servico">
-                <option value="geriatrico">Cuidados Geriátricos</option>
-                <option value="pos-cirurgico">Cuidados Pós-Cirúrgicos</option>
-                <option value="paliativo">Cuidados Paliativos</option>
+    <!-- PLANOS -->
+    <section id="planos">
+        <h2>Planos & Preços</h2>
+
+        <div class="grid">
+            <div class="plano">
+                <h3>Básico</h3>
+                <p class="preco">R$ 199/mês</p>
+                <p>Atendimento semanal</p>
+            </div>
+
+            <div class="plano">
+                <h3>Essencial</h3>
+                <p class="preco">R$ 399/mês</p>
+                <p>Atendimento 3x por semana</p>
+            </div>
+
+            <div class="plano">
+                <h3>Premium</h3>
+                <p class="preco">R$ 699/mês</p>
+                <p>Atendimento diário</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERIA -->
+    <section id="galeria">
+        <h2>Galeria</h2>
+
+        <div class="grid galeria">
+            <img src="https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?w=800">
+            <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800">
+            <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?w=800">
+            <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=800">
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+        <h2>Perguntas Frequentes</h2>
+
+        <div class="faq">
+            <div class="faq-item">Como funciona o agendamento?</div>
+            <div class="faq-item">Vocês atendem em domicílio?</div>
+            <div class="faq-item">Quais são as formas de pagamento?</div>
+        </div>
+    </section>
+
+    <!-- BLOG -->
+    <section id="blog">
+        <h2>Blog & Artigos</h2>
+
+        <div class="grid">
+            <div class="card post">
+                <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=900">
+                <h3>Cuidados no Pós Operatório</h3>
+            </div>
+
+            <div class="card post">
+                <img src="https://images.unsplash.com/photo-1576765975093-e79c6b0839e0?w=900">
+                <h3>Como Melhorar a Mobilidade do Idoso</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- AGENDAMENTO -->
+    <section id="agendamento">
+        <h2>Agendar Consulta</h2>
+
+        <form id="formAgendamento">
+            <label>Nome:</label>
+            <input type="text" id="nome">
+
+            <label>Serviço:</label>
+            <select id="servico">
+                <option>Geriatria</option>
+                <option>Pós-cirúrgico</option>
+                <option>Paliativo</option>
             </select>
 
-            <label for="data">Data de Atendimento:</label>
-            <input type="date" id="data" name="data" required>
+            <label>Data:</label>
+            <input type="date" id="data">
 
-            <label for="hora">Hora de Atendimento:</label>
-            <input type="time" id="hora" name="hora" required>
+            <label>Hora:</label>
+            <input type="time" id="hora">
 
-            <label for="nome">Seu Nome:</label>
-            <input type="text" id="nome" name="nome" required>
+            <label>Mensagem:</label>
+            <textarea id="msg"></textarea>
 
-            <label for="email">Seu E-mail:</label>
-            <input type="email" id="email" name="email" required>
-
-            <button type="submit" class="cta-btn">Agendar</button>
+            <button class="btn">Enviar Agendamento</button>
         </form>
     </section>
 
-    <!-- Contato Section -->
-    <section id="contato" class="section">
+    <!-- CONTATO -->
+    <section id="contato">
         <h2>Contato</h2>
-        <p>Fale conosco através do nosso WhatsApp ou envie um e-mail.</p>
-        <p>WhatsApp: <a href="https://wa.me/123456789" target="_blank">Clique aqui</a></p>
-        <p>E-mail: <a href="mailto:contato@vitaly.com.br">contato@vitaly.com.br</a></p>
+        <p>WhatsApp: <a href="#">Clique aqui</a></p>
+        <p>Email: contato@vitaly.com</p>
+
+        <iframe src="https://maps.google.com/maps?q=sao%20paulo&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
     </section>
 
-    <footer>
-        <p>&copy; 2025 Vitaly Saúde & Cuidado - Todos os direitos reservados.</p>
-    </footer>
+    <!-- CHATBOT -->
+    <div id="chatbot">Chat</div>
+    <div id="chat-window">
+        <p><b>Atendente Virtual:</b> Como posso ajudar?</p>
+        <input type="text" placeholder="Digite...">
+    </div>
 
-    <script>
-        // Lógica para o envio do formulário de agendamento
-        document.getElementById('agendamento-form').addEventListener('submit', function(e) {
-            e.preventDefault();
+    <script src="ana.js"></script>
 
-            const nome = document.getElementById('nome').value;
-            const email = document.getElementById('email').value;
-            const tipoServico = document.getElementById('tipo-servico').value;
-            const data = document.getElementById('data').value;
-            const hora = document.getElementById('hora').value;
-
-            alert(`Agendamento realizado com sucesso!\n\nNome: ${nome}\nServiço: ${tipoServico}\nData: ${data}\nHora: ${hora}`);
-
-            // Aqui você pode enviar os dados para um servidor ou API de agendamento
-        });
-    </script>
 </body>
+
 </html>
